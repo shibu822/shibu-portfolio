@@ -142,8 +142,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function init() {
         particles = [];
-        // Calculate appropriate count based on area (cap at 85 for smooth performance)
-        const count = Math.min(Math.floor((width * height) / 16000), 85);
+        const isMobile = window.innerWidth <= 768;
+        // Lightweight particle count on mobile for 120fps smooth scrolling
+        const count = isMobile ? 22 : Math.min(Math.floor((width * height) / 18000), 65);
         for (let i = 0; i < count; i++) {
             particles.push(new Particle());
         }
