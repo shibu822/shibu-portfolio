@@ -1,1074 +1,416 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shibu Shalom B.P | Full Stack .NET & Web Developer</title>
-    <meta name="description" content="Portfolio of Shibu Shalom B.P, a passionate Full Stack Developer specializing in .NET Core, C#, Angular, React, and SQL Server.">
-    <meta name="keywords" content="Shibu Shalom, Full Stack Developer, .NET Core, Angular, React, C#, SQL Server, Web Developer, Portfolio">
-    <meta name="author" content="Shibu Shalom B.P">
+    <title>Shibu Shalom B.P — Full-Stack Developer</title>
+    <meta name="description" content="Full-stack developer building enterprise web applications with ASP.NET Core, C#, SQL Server, Angular, and React.">
     
-    <!-- Open Graph / Meta -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Shibu Shalom B.P | Full Stack .NET Developer">
-    <meta property="og:description" content="Explore enterprise web projects, .NET Core APIs, modern UI architectures, and technical skills.">
-    <meta property="og:image" content="assets/profile.jpg">
-    <meta property="og:url" content="https://shibu-portfolio-lake.vercel.app">
-
-    <!-- Fonts: Plus Jakarta Sans + Inter + JetBrains Mono -->
+    <!-- IBM Plex Sans + IBM Plex Mono (Zero Inter) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Devicon for Tech Stack Icons -->
+    <!-- Devicon & FontAwesome for standard tech glyphs -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- Custom Modern Styles -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- Reading Progress Bar -->
-    <div class="scroll-progress-container" aria-hidden="true">
-        <div class="scroll-progress-bar" id="scrollProgressBar"></div>
-    </div>
-
-    <!-- Custom Cursor Glow / Ring (Desktop Only) -->
-    <div class="custom-cursor-dot" id="cursorDot" aria-hidden="true"></div>
-    <div class="custom-cursor-ring" id="cursorRing" aria-hidden="true"></div>
-
-    <!-- Background Particle Canvas -->
-    <canvas id="particle-canvas" class="particle-canvas" aria-hidden="true"></canvas>
-
-    <!-- Navigation Header -->
-    <header class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#hero" class="brand-logo" aria-label="Shibu Shalom Home">
-                <span class="logo-badge">&lt;/&gt;</span>
-                <span class="logo-text">Shibu<span class="accent-text">.dev</span></span>
-            </a>
-
-            <nav class="nav-menu" id="navMenu">
-                <ul class="nav-links">
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#skills" class="nav-link">Skills</a></li>
-                    <li><a href="#services" class="nav-link">Services</a></li>
-                    <li><a href="#experience" class="nav-link">Experience</a></li>
-                    <li><a href="#projects" class="nav-link">Projects</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
+    <!-- Top Navigation -->
+    <header class="site-header">
+        <div class="site-nav">
+            <a href="#about" class="nav-brand">Shibu Shalom</a>
+            <nav class="nav-links">
+                <a href="#projects">Projects</a>
+                <a href="#experience">Experience</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
             </nav>
-
-            <div class="nav-actions">
-                <!-- Command Palette Shortcut Button -->
-                <button class="cmd-palette-btn" id="cmdPaletteTrigger" title="Quick Search (Cmd + K / Ctrl + K)" aria-label="Open Command Palette">
-                    <i class="fas fa-search"></i>
-                    <span class="cmd-key"><kbd>⌘</kbd>K</span>
-                </button>
-
-                <!-- Dark / Light Theme Toggle -->
-                <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme" title="Switch Theme">
-                    <i class="fas fa-moon moon-icon"></i>
-                    <i class="fas fa-sun sun-icon"></i>
-                </button>
-
-                <!-- Direct CTA Button -->
-                <a href="#contact" class="btn btn-outline nav-cta">Let's Talk</a>
-
-                <!-- Mobile Hamburger Toggle -->
-                <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu">
-                    <span class="hamburger-bar"></span>
-                    <span class="hamburger-bar"></span>
-                    <span class="hamburger-bar"></span>
-                </button>
-            </div>
         </div>
     </header>
 
-    <main id="main-content">
-        <!-- Hero Section -->
-        <section id="hero" class="hero-section">
-            <div class="container hero-container">
-                <div class="hero-content">
-                    <!-- Top Meta: Mobile Avatar + Status Pill -->
-                    <div class="hero-top-meta fade-in">
-                        <div class="hero-avatar-compact" aria-hidden="true">
-                            <img src="assets/profile.jpg" alt="Shibu Shalom" class="avatar-compact-img">
-                            <span class="avatar-status-dot"></span>
-                        </div>
-                        <div class="status-pill">
-                            <span class="pulse-dot"></span>
-                            <span class="status-text">Available for Full-time Roles</span>
+    <main class="content-wrapper">
+        <!-- Hero: 100% Left-Aligned, Pure Facts, Zero Slop -->
+        <section id="about" class="hero-block">
+            <div class="hero-identity">
+                <img src="assets/profile.jpg" alt="Shibu Shalom B.P" class="hero-avatar">
+                <div>
+                    <h1 class="hero-name">Shibu Shalom B.P</h1>
+                    <p class="hero-role">Full-Stack Developer &bull; Nagercoil, Tamil Nadu, India</p>
+                </div>
+            </div>
+
+            <p class="hero-description">
+                I build web applications and backend services with ASP.NET Core, C#, and Microsoft SQL Server, coupled with frontend applications in Angular and React. Focused on clean layered architecture, normalized schemas, and reliable APIs.
+            </p>
+
+            <div class="hero-cta-row">
+                <a href="mailto:shibushalommp@gmail.com" class="btn btn-primary">Get in touch</a>
+                <a href="https://github.com/shibu822" target="_blank" rel="noopener noreferrer" class="link-inline">
+                    GitHub <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/shibu-shalom-b07525325/" target="_blank" rel="noopener noreferrer" class="link-inline">
+                    LinkedIn <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Featured Project with Live Technical System Inspector (One Thing Worth Looking At) -->
+        <section id="projects" class="section-block">
+            <h2 class="section-heading">Featured Project</h2>
+
+            <article class="project-entry">
+                <div class="project-header">
+                    <div>
+                        <h3 class="project-title">Clinic Management System (CMS)</h3>
+                        <p class="project-subtitle">Full-stack healthcare operations platform</p>
+                    </div>
+                    <a href="https://github.com/Ramalingamsj/ClinicManagementSystem" target="_blank" rel="noopener noreferrer" class="link-inline">
+                        Source code <i class="fas fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+
+                <p class="project-body">
+                    Engineered to manage clinical workflows across patients, doctors, appointment scheduling, and automated billing. Implemented with a 3-tier architecture (Controller &rarr; Service &rarr; Repository) in ASP.NET Core Web API with code-first EF Core migrations and an Angular frontend.
+                </p>
+
+                <div class="tech-tag-row">
+                    <span class="tech-tag">ASP.NET Core 8 Web API</span>
+                    <span class="tech-tag">C#</span>
+                    <span class="tech-tag">Entity Framework Core</span>
+                    <span class="tech-tag">SQL Server</span>
+                    <span class="tech-tag">Angular</span>
+                    <span class="tech-tag">Bootstrap 5</span>
+                </div>
+
+                <!-- SIGNATURE FOCAL PIECE: Real System & Database Inspector -->
+                <div class="inspector-card">
+                    <div class="inspector-toolbar">
+                        <span class="inspector-label">System Architecture Inspector</span>
+                        <div class="inspector-tabs" role="tablist">
+                            <button class="inspector-tab active" data-tab="schema" role="tab">DB Schema</button>
+                            <button class="inspector-tab" data-tab="api" role="tab">REST Endpoints</button>
+                            <button class="inspector-tab" data-tab="layers" role="tab">Layer Flow</button>
                         </div>
                     </div>
 
-                    <!-- Intro Titles -->
-                    <div class="hero-headings fade-in-up">
-                        <p class="hero-greeting">Hi there, I am</p>
-                        <h1 class="hero-name">Shibu Shalom <span class="hero-initials">B.P</span></h1>
-                        <h2 class="hero-typed-wrapper">
-                            <span class="hero-typed-prefix">I build </span>
-                            <span class="hero-typed-text" id="typewriterText">Full-Stack .NET Solutions</span>
-                            <span class="typing-cursor" aria-hidden="true">|</span>
-                        </h2>
+                    <!-- Panel 1: Database Schema -->
+                    <div class="inspector-panel active" id="panel-schema">
+                        <div class="schema-grid">
+                            <div class="schema-table">
+                                <div class="table-name">dbo.Patients</div>
+                                <div class="table-cols">
+                                    <div class="col-row pk"><span>PatientId</span><code>INT (PK, Identity)</code></div>
+                                    <div class="col-row"><span>FullName</span><code>NVARCHAR(100)</code></div>
+                                    <div class="col-row"><span>DOB</span><code>DATE</code></div>
+                                    <div class="col-row"><span>ContactNumber</span><code>VARCHAR(15)</code></div>
+                                    <div class="col-row"><span>BloodGroup</span><code>VARCHAR(5)</code></div>
+                                </div>
+                            </div>
+
+                            <div class="schema-table">
+                                <div class="table-name">dbo.Appointments</div>
+                                <div class="table-cols">
+                                    <div class="col-row pk"><span>AppointmentId</span><code>INT (PK, Identity)</code></div>
+                                    <div class="col-row fk"><span>PatientId</span><code>INT (FK &rarr; Patients)</code></div>
+                                    <div class="col-row fk"><span>DoctorId</span><code>INT (FK &rarr; Doctors)</code></div>
+                                    <div class="col-row"><span>SlotDateTime</span><code>DATETIME2</code></div>
+                                    <div class="col-row"><span>Status</span><code>VARCHAR(20)</code></div>
+                                </div>
+                            </div>
+
+                            <div class="schema-table">
+                                <div class="table-name">dbo.Doctors</div>
+                                <div class="table-cols">
+                                    <div class="col-row pk"><span>DoctorId</span><code>INT (PK, Identity)</code></div>
+                                    <div class="col-row"><span>Specialization</span><code>NVARCHAR(50)</code></div>
+                                    <div class="col-row"><span>RoomNumber</span><code>VARCHAR(10)</code></div>
+                                    <div class="col-row"><span>ConsultationFee</span><code>DECIMAL(10,2)</code></div>
+                                    <div class="col-row"><span>IsActive</span><code>BIT</code></div>
+                                </div>
+                            </div>
+
+                            <div class="schema-table">
+                                <div class="table-name">dbo.Invoices</div>
+                                <div class="table-cols">
+                                    <div class="col-row pk"><span>InvoiceId</span><code>INT (PK, Identity)</code></div>
+                                    <div class="col-row fk"><span>AppointmentId</span><code>INT (FK &rarr; Appts)</code></div>
+                                    <div class="col-row"><span>TotalAmount</span><code>DECIMAL(10,2)</code></div>
+                                    <div class="col-row"><span>IsSettled</span><code>BIT</code></div>
+                                    <div class="col-row"><span>GeneratedAt</span><code>DATETIME2</code></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Short Bio -->
-                    <p class="hero-bio fade-in-up">
-                        Full-Stack Developer specializing in scalable <strong>ASP.NET Core</strong> backend APIs, robust <strong>C# services</strong>, and modern reactive interfaces in <strong>Angular</strong> & <strong>React</strong>. Dedicated to clean architecture and seamless UX.
-                    </p>
+                    <!-- Panel 2: REST Endpoints -->
+                    <div class="inspector-panel" id="panel-api">
+                        <div class="code-flow-block">
+<span class="route-verb post">POST</span> <code>/api/v1/appointments/schedule</code>
+<span class="code-comment">// Validates doctor availability, checks slot collision, writes to SQL Server</span>
+<pre><code>{
+  "patientId": 1042,
+  "doctorId": 18,
+  "slotDateTime": "2026-11-25T10:30:00Z",
+  "reason": "Routine Consultation"
+}
+&rarr; Returns: 201 Created | { "appointmentId": 8021, "status": "Confirmed" }</code></pre>
 
-                    <!-- CTAs -->
-                    <div class="hero-actions fade-in-up">
-                        <a href="#projects" class="btn btn-primary">
-                            <span>Explore Projects</span>
-                            <i class="fas fa-arrow-right"></i>
+<span class="route-verb get">GET</span> <code>/api/v1/patients/{id}/history</code>
+<span class="code-comment">// Eager loads medical consultations, prescriptions, and billing state via LINQ Include</span>
+<pre><code>&rarr; Returns: 200 OK [ { "appointmentId": 7910, "doctor": "Dr. Sarah", "fee": 500.00 } ]</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Panel 3: Layer Architecture -->
+                    <div class="inspector-panel" id="panel-layers">
+                        <div class="architecture-diagram">
+                            <div class="arch-step">
+                                <span class="step-num">1</span>
+                                <div class="step-info">
+                                    <strong>Presentation Layer &bull; Angular HttpClient</strong>
+                                    <span>Reactive forms, slot selection, and route guards.</span>
+                                </div>
+                            </div>
+                            <div class="arch-arrow">&darr;</div>
+                            <div class="arch-step">
+                                <span class="step-num">2</span>
+                                <div class="step-info">
+                                    <strong>API Controller Layer &bull; AppointmentsController</strong>
+                                    <span>Model validation, HTTP status codes, authorization.</span>
+                                </div>
+                            </div>
+                            <div class="arch-arrow">&darr;</div>
+                            <div class="arch-step">
+                                <span class="step-num">3</span>
+                                <div class="step-info">
+                                    <strong>Service Layer &bull; AppointmentService</strong>
+                                    <span>Business validation, conflict checking, billing calculation.</span>
+                                </div>
+                            </div>
+                            <div class="arch-arrow">&darr;</div>
+                            <div class="arch-step">
+                                <span class="step-num">4</span>
+                                <div class="step-info">
+                                    <strong>Data Access &bull; Generic Repository &amp; EF Core DbContext</strong>
+                                    <span>Normalized queries, transactions, SQL Server execution.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article class="project-entry mt-4">
+                <div class="project-header">
+                    <div>
+                        <h3 class="project-title">Visit Kanyakumari Tourism Portal</h3>
+                        <p class="project-subtitle">Regional travel and destination guide</p>
+                    </div>
+                    <div class="project-links-group">
+                        <a href="https://github.com/shibu822/kanyakumari" target="_blank" rel="noopener noreferrer" class="link-inline">
+                            Source code <i class="fas fa-arrow-up-right-from-square"></i>
                         </a>
-                        <button class="btn btn-glass" id="resumeModalBtn">
-                            <i class="fas fa-file-invoice"></i>
-                            <span>View Resume</span>
-                        </button>
-                        <a href="mailto:shibushalommp@gmail.com" class="btn btn-icon" title="Email Shibu" aria-label="Email Shibu">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                        <a href="https://github.com/shibu822" target="_blank" rel="noopener noreferrer" class="btn btn-icon" title="GitHub Profile" aria-label="GitHub Profile">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/shibu-shalom-b07525325/" target="_blank" rel="noopener noreferrer" class="btn btn-icon" title="LinkedIn Profile" aria-label="LinkedIn Profile">
-                            <i class="fab fa-linkedin-in"></i>
+                        <span class="divider">&bull;</span>
+                        <a href="https://shibu-portfolio-lake.vercel.app" target="_blank" rel="noopener noreferrer" class="link-inline">
+                            Live demo <i class="fas fa-arrow-up-right-from-square"></i>
                         </a>
                     </div>
-
-                    <!-- Quick Highlight Stats -->
-                    <div class="hero-stats fade-in-up">
-                        <div class="stat-card">
-                            <span class="stat-number">2+</span>
-                            <span class="stat-label">Years Experience</span>
-                        </div>
-                        <div class="stat-divider"></div>
-                        <div class="stat-card">
-                            <span class="stat-number">10+</span>
-                            <span class="stat-label">Production Modules</span>
-                        </div>
-                        <div class="stat-divider"></div>
-                        <div class="stat-card">
-                            <span class="stat-number">100%</span>
-                            <span class="stat-label">Clean Architecture</span>
-                        </div>
-                    </div>
                 </div>
 
-                <!-- Hero Visual / 3D Tilt Card -->
-                <div class="hero-visual fade-in">
-                    <div class="profile-card-3d" id="profileTiltCard">
-                        <div class="profile-glow"></div>
-                        <div class="profile-image-wrapper">
-                            <img src="assets/profile.jpg" alt="Shibu Shalom B.P" class="profile-image" loading="eager">
-                            <div class="profile-overlay-gradient"></div>
-                        </div>
+                <p class="project-body">
+                    A responsive regional guide showcasing attractions, cultural landmarks, travel routes, and local galleries. Built using semantic HTML5, CSS Grid/Flexbox, and vanilla JavaScript, deployed globally on Vercel CDN.
+                </p>
 
-                        <!-- Floating Tech Badges -->
-                        <div class="floating-badge badge-top-right">
-                            <i class="devicon-dotnetcore-plain colored"></i>
-                            <span>.NET Core 9</span>
-                        </div>
-                        <div class="floating-badge badge-mid-left">
-                            <i class="devicon-angularjs-plain colored"></i>
-                            <span>Angular</span>
-                        </div>
-                        <div class="floating-badge badge-bottom-right">
-                            <i class="devicon-react-original colored"></i>
-                            <span>React 19</span>
-                        </div>
-                        <div class="floating-badge badge-bottom-left">
-                            <i class="devicon-microsoftsqlserver-plain colored"></i>
-                            <span>SQL Server</span>
-                        </div>
-                    </div>
+                <div class="tech-tag-row">
+                    <span class="tech-tag">HTML5</span>
+                    <span class="tech-tag">CSS3</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">Bootstrap 5</span>
+                    <span class="tech-tag">Vercel CDN</span>
                 </div>
-            </div>
-
-            <!-- Scroll Down Indicator -->
-            <a href="#about" class="scroll-down-indicator" aria-label="Scroll down to about section">
-                <span class="mouse-icon">
-                    <span class="mouse-wheel"></span>
-                </span>
-                <span class="scroll-text">Scroll Down</span>
-            </a>
+            </article>
         </section>
 
-        <!-- About Me Section -->
-        <section id="about" class="section about-section">
-            <div class="container">
-                <div class="section-header text-center fade-in-up">
-                    <span class="section-tag">&lt;identity /&gt;</span>
-                    <h2 class="section-title">About Me</h2>
-                    <p class="section-subtitle">Bridging backend architecture with aesthetic, responsive frontends.</p>
+        <!-- Technical Skills: Clear Categorized Monospace Matrix -->
+        <section id="skills" class="section-block">
+            <h2 class="section-heading">Technical Skills</h2>
+
+            <div class="skills-block">
+                <div class="skills-group">
+                    <span class="group-title">Backend & APIs</span>
+                    <div class="skills-list">
+                        <span>C#</span>
+                        <span>ASP.NET Core Web API</span>
+                        <span>Entity Framework Core</span>
+                        <span>ADO.NET</span>
+                        <span>LINQ</span>
+                        <span>RESTful Architecture</span>
+                    </div>
                 </div>
 
-                <div class="about-grid">
-                    <div class="about-card spotlight-card fade-in-up">
-                        <div class="about-card-glow"></div>
-                        <div class="card-icon-box">
-                            <i class="fas fa-terminal"></i>
-                        </div>
-                        <h3>Who I Am</h3>
-                        <p>
-                            I am <strong>Shibu Shalom B.P</strong>, a dedicated Web Solutions Engineer and Full-Stack Developer from Tamil Nadu, India. With a deep passion for modern software engineering, I specialize in architecting end-to-end web systems that are secure, reliable, and delight users.
-                        </p>
-                        <p class="mt-3">
-                            My journey is backed by hands-on industry internship experience in Technopark, where I engineered scalable ASP.NET Core modules and managed relational databases.
-                        </p>
+                <div class="skills-group">
+                    <span class="group-title">Databases</span>
+                    <div class="skills-list">
+                        <span>Microsoft SQL Server</span>
+                        <span>MySQL</span>
+                        <span>Schema Design</span>
+                        <span>Stored Procedures</span>
                     </div>
+                </div>
 
-                    <div class="about-card spotlight-card fade-in-up" style="transition-delay: 150ms;">
-                        <div class="about-card-glow"></div>
-                        <div class="card-icon-box">
-                            <i class="fas fa-bullseye"></i>
-                        </div>
-                        <h3>What Drives Me</h3>
-                        <ul class="check-list">
-                            <li><i class="fas fa-check-circle"></i> <strong>Layered Clean Architecture:</strong> Controller → Service → Repository design.</li>
-                            <li><i class="fas fa-check-circle"></i> <strong>Modern Frontend Craft:</strong> Pixel-perfect responsive designs with Angular & React.</li>
-                            <li><i class="fas fa-check-circle"></i> <strong>High-Performance APIs:</strong> Optimized RESTful endpoints, LINQ queries, and EF Core code-first migrations.</li>
-                            <li><i class="fas fa-check-circle"></i> <strong>Continuous Growth:</strong> Constantly embracing modern tooling, AI-assisted development, and cloud hosting.</li>
-                        </ul>
+                <div class="skills-group">
+                    <span class="group-title">Frontend</span>
+                    <div class="skills-list">
+                        <span>TypeScript</span>
+                        <span>JavaScript (ES6+)</span>
+                        <span>Angular</span>
+                        <span>React</span>
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>Bootstrap 5</span>
+                    </div>
+                </div>
+
+                <div class="skills-group">
+                    <span class="group-title">Tools & Workflow</span>
+                    <div class="skills-list">
+                        <span>Git</span>
+                        <span>GitHub</span>
+                        <span>Visual Studio</span>
+                        <span>VS Code</span>
+                        <span>Postman</span>
+                        <span>Figma</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Services / Capabilities Section -->
-        <section id="services" class="section services-section">
-            <div class="container">
-                <div class="section-header text-center fade-in-up">
-                    <span class="section-tag">&lt;expertise /&gt;</span>
-                    <h2 class="section-title">What I Do</h2>
-                    <p class="section-subtitle">Comprehensive development capabilities across the full software lifecycle.</p>
+        <!-- Experience: Factual Chronological Work Log -->
+        <section id="experience" class="section-block">
+            <h2 class="section-heading">Experience &amp; Training</h2>
+
+            <div class="experience-list">
+                <div class="experience-item">
+                    <div class="exp-meta">
+                        <strong>Faith Infotech</strong> &bull; Technopark, Trivandrum
+                        <span class="exp-dates">Sep 2025 &ndash; Mar 2026</span>
+                    </div>
+                    <div class="exp-role">.NET Full Stack Developer Intern</div>
+                    <ul class="exp-bullets">
+                        <li>Developed web modules using ASP.NET Core MVC and SQL Server.</li>
+                        <li>Implemented CRUD operations using repository and service layers.</li>
+                        <li>Designed relational database schemas with foreign key integrity and optimized queries.</li>
+                        <li>Collaborated on version control workflows with Git.</li>
+                    </ul>
                 </div>
 
-                <div class="services-grid">
-                    <div class="service-card spotlight-card fade-in-up">
-                        <div class="card-gradient-border"></div>
-                        <div class="service-icon-wrapper">
-                            <i class="fas fa-server"></i>
-                        </div>
-                        <h3>Backend & RESTful APIs</h3>
-                        <p>
-                            Architecting resilient, production-ready RESTful web services using <strong>ASP.NET Core Web API</strong> and <strong>C#</strong>. Implementing JWT authentication, repository design patterns, and dependency injection for enterprise reliability.
-                        </p>
-                        <div class="service-tags">
-                            <span>ASP.NET Core</span>
-                            <span>C#</span>
-                            <span>Web API</span>
-                            <span>REST</span>
-                            <span>LINQ</span>
-                        </div>
+                <div class="experience-item">
+                    <div class="exp-meta">
+                        <strong>Pantech E-Learning</strong> &bull; Chennai
+                        <span class="exp-dates">Jun 2023</span>
                     </div>
+                    <div class="exp-role">Frontend Developer Training</div>
+                    <ul class="exp-bullets">
+                        <li>Structured responsive web layouts with semantic HTML and modern CSS.</li>
+                        <li>Gained practical exposure to cross-browser compatibility and UI structuring.</li>
+                    </ul>
+                </div>
 
-                    <div class="service-card spotlight-card fade-in-up" style="transition-delay: 150ms;">
-                        <div class="card-gradient-border"></div>
-                        <div class="service-icon-wrapper">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
-                        <h3>Modern Frontend UI/UX</h3>
-                        <p>
-                            Building responsive, dynamic, and intuitive web interfaces utilizing <strong>Angular</strong>, <strong>React</strong>, and modern CSS frameworks. Focused on component modularity, state management, and fluid micro-interactions.
-                        </p>
-                        <div class="service-tags">
-                            <span>Angular</span>
-                            <span>React</span>
-                            <span>TypeScript</span>
-                            <span>HTML5 / CSS3</span>
-                            <span>Bootstrap</span>
-                        </div>
+                <div class="experience-item">
+                    <div class="exp-meta">
+                        <strong>Udemy</strong> &bull; Online
+                        <span class="exp-dates">Credential</span>
                     </div>
-
-                    <div class="service-card spotlight-card fade-in-up" style="transition-delay: 300ms;">
-                        <div class="card-gradient-border"></div>
-                        <div class="service-icon-wrapper">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <h3>Database Architecture</h3>
-                        <p>
-                            Designing normalized relational databases, writing optimized queries, and implementing code-first migrations with <strong>SQL Server</strong> and <strong>Entity Framework Core</strong>.
-                        </p>
-                        <div class="service-tags">
-                            <span>SQL Server</span>
-                            <span>EF Core</span>
-                            <span>ADO.NET</span>
-                            <span>Schema Design</span>
-                            <span>CRUD</span>
-                        </div>
-                    </div>
+                    <div class="exp-role">Figma &mdash; UI/UX Design Certification</div>
+                    <ul class="exp-bullets">
+                        <li>Mobile and web layout design, component systems, and prototyping.</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <!-- Interactive Skills Section -->
-        <section id="skills" class="section skills-section">
-            <div class="container">
-                <div class="section-header text-center fade-in-up">
-                    <span class="section-tag">&lt;stack /&gt;</span>
-                    <h2 class="section-title">Technical Skills</h2>
-                    <p class="section-subtitle">A curated toolkit of languages, frameworks, and developer utilities.</p>
+        <!-- Contact Section -->
+        <section id="contact" class="section-block">
+            <h2 class="section-heading">Contact</h2>
+            <p class="section-lead">Have a project, job opportunity, or technical inquiry? Reach out directly.</p>
+
+            <div class="contact-methods">
+                <div class="contact-line">
+                    <span class="contact-key">Email:</span>
+                    <a href="mailto:shibushalommp@gmail.com" class="contact-val">shibushalommp@gmail.com</a>
                 </div>
-
-                <!-- Interactive Filter Controls -->
-                <div class="skills-filter-container fade-in-up">
-                    <div class="skills-search-box">
-                        <i class="fas fa-search"></i>
-                        <input type="text" id="skillSearchInput" placeholder="Filter skills (e.g., C#, Angular, SQL)..." aria-label="Search skills">
-                        <button id="skillSearchClear" class="clear-search-btn" title="Clear filter" style="display: none;">&times;</button>
-                    </div>
-
-                    <div class="skills-category-tabs" id="skillTabs">
-                        <button class="skill-tab active" data-filter="all">All Skills</button>
-                        <button class="skill-tab" data-filter="languages">Languages</button>
-                        <button class="skill-tab" data-filter="frameworks">Frameworks & Backend</button>
-                        <button class="skill-tab" data-filter="frontend">Frontend & UI</button>
-                        <button class="skill-tab" data-filter="database">Databases & Tools</button>
-                    </div>
+                <div class="contact-line">
+                    <span class="contact-key">Phone:</span>
+                    <a href="tel:+918220078235" class="contact-val">+91 8220078235</a>
                 </div>
-
-                <!-- Skills Grid -->
-                <div class="skills-grid" id="skillsGrid">
-                    <!-- Languages -->
-                    <div class="skill-item spotlight-card" data-category="languages" data-name="C#">
-                        <div class="skill-icon"><i class="devicon-csharp-plain colored"></i></div>
-                        <div class="skill-info">
-                            <h4>C#</h4>
-                            <span class="skill-level">Core Backend</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-item spotlight-card" data-category="languages" data-name="JavaScript">
-                        <div class="skill-icon"><i class="devicon-javascript-plain colored"></i></div>
-                        <div class="skill-info">
-                            <h4>JavaScript</h4>
-                            <span class="skill-level">ES6+ Modern</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-item spotlight-card" data-category="languages" data-name="TypeScript">
-                        <div class="skill-icon"><i class="devicon-typescript-plain colored"></i></div>
-                        <div class="skill-info">
-                            <h4>TypeScript</h4>
-                            <span class="skill-level">Typed Frontend</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-item spotlight-card" data-category="languages" data-name="SQL">
-                        <div class="skill-icon"><i class="fas fa-database text-cyan"></i></div>
-                        <div class="skill-info">
-                            <h4>SQL</h4>
-                            <span class="skill-level">Relational Data</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-item spotlight-card" data-category="languages" data-name="HTML5">
-                        <div class="skill-icon"><i class="devicon-html5-plain colored"></i></div>
-                        <div class="skill-info">
-                            <h4>HTML5</h4>
-                            <span class="skill-level">Semantic Web</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-item spotlight-card" data-category="languages" data-name="CSS3">
-                        <div class="skill-icon"><i class="devicon-css3-plain colored"></i></div>
-                        <div class="skill-info">
-                            <h4>CSS3</h4>
-                            <span class="skill-level">Responsive & Flex/Grid</span>
-                        </div>
-                    </div>
-
-                    <!-- Frameworks & Backend -->
-                    <div class="skill-item spotlight-card" data-category="frameworks" data-name="ASP.NET Core">
-                        <div class="skill-icon"><i class="devicon-dotnetcore-plain colored"></i></div>
-                        <div class="skill-info">
-                            <h4>ASP.NET Core</h4>
-                            <span class="skill-level">Enterprise Backend</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-item spotlight-card" data-category="frameworks" data-name="Entity Framework Core">
-                        <div class="skill-icon"><i class="fas fa-cubes text-emerald"></i></div>
-                        <div class="skill-info">
-                            <h4>EF Core</h4>
-                            <span class="skill-level">ORM & Migrations</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-item spotlight-card" data-category="frameworks" data-name="RESTful APIs">
-                        <div class="skill-icon"><i class="fas fa-network-wired text-violet"></i></div>
-                        <div class="skill-info">
-                            <h4>RESTful APIs</h4>
-                            <span class="skill-level">Web Services</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-item spotlight-card" data-category="frameworks" data-name="LINQ">
-                        <div class="skill-icon"><i class="fas fa-code-branch text-cyan"></i></div>
-                        <div class="skill-info">
-                            <h4>LINQ</h4>
-                            <span class="skill-level">Data Queries</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-item spotlight-card" data-category="frameworks" data-name="Node.js">
-                        <div class="skill-icon"><i class="devicon-nodejs-plain colored"></i></div>
-                        <div class="skill-info">
-                            <h4>Node.js</h4>
-                            <span class="skill-level">Runtime & Tools</span>
-                        </div>
-                    </div>
-
-                    <!-- Frontend -->
-                    <div class="skill-item spotlight-card" data-category="frontend" data-name="Angular">
-                        <div class="skill-icon"><i class="devicon-angularjs-plain colored"></i></div>
-                        <div class="skill-info">
-                            <h4>Angular</h4>
-                            <span class="skill-level">SPA Framework</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-item spotlight-card" data-category="frontend" data-name="React">
-                        <div class="skill-icon"><i class="devicon-react-original colored"></i></div>
-                        <div class="skill-info">
-                            <h4>React</h4>
-                            <span class="skill-level">Component Architecture</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-item spotlight-card" data-category="frontend" data-name="Bootstrap">
-                        <div class="skill-icon"><i class="devicon-bootstrap-plain colored"></i></div>
-                        <div class="skill-info">
-                            <h4>Bootstrap 5</h4>
-                            <span class="skill-level">UI Library</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-item spotlight-card" data-category="frontend" data-name="Figma">
-                        <div class="skill-icon"><i class="devicon-figma-plain colored"></i></div>
-                        <div class="skill-info">
-                            <h4>Figma</h4>
-                            <span class="skill-level">UI/UX Prototyping</span>
-                        </div>
-                    </div>
-
-                    <!-- Database & Tools -->
-                    <div class="skill-item spotlight-card" data-category="database" data-name="SQL Server">
-                        <div class="skill-icon"><i class="devicon-microsoftsqlserver-plain colored"></i></div>
-                        <div class="skill-info">
-                            <h4>SQL Server</h4>
-                            <span class="skill-level">Enterprise RDBMS</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-item spotlight-card" data-category="database" data-name="MySQL">
-                        <div class="skill-icon"><i class="devicon-mysql-plain colored"></i></div>
-                        <div class="skill-info">
-                            <h4>MySQL</h4>
-                            <span class="skill-level">Database</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-item spotlight-card" data-category="database" data-name="Git">
-                        <div class="skill-icon"><i class="devicon-git-plain colored"></i></div>
-                        <div class="skill-info">
-                            <h4>Git</h4>
-                            <span class="skill-level">Version Control</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-item spotlight-card" data-category="database" data-name="GitHub">
-                        <div class="skill-icon"><i class="devicon-github-original"></i></div>
-                        <div class="skill-info">
-                            <h4>GitHub</h4>
-                            <span class="skill-level">Collaboration & CI/CD</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-item spotlight-card" data-category="database" data-name="Postman">
-                        <div class="skill-icon"><i class="devicon-postman-plain colored"></i></div>
-                        <div class="skill-info">
-                            <h4>Postman</h4>
-                            <span class="skill-level">API Testing</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-item spotlight-card" data-category="database" data-name="VS Code">
-                        <div class="skill-icon"><i class="devicon-vscode-plain colored"></i></div>
-                        <div class="skill-info">
-                            <h4>VS Code</h4>
-                            <span class="skill-level">Code Editor</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-item spotlight-card" data-category="database" data-name="Visual Studio">
-                        <div class="skill-icon"><i class="devicon-visualstudio-plain colored"></i></div>
-                        <div class="skill-info">
-                            <h4>Visual Studio</h4>
-                            <span class="skill-level">IDE Powerhouse</span>
-                        </div>
-                    </div>
+                <div class="contact-line">
+                    <span class="contact-key">Location:</span>
+                    <span class="contact-val">Nagercoil, Tamil Nadu, India</span>
+                </div>
+                <div class="contact-line">
+                    <span class="contact-key">GitHub:</span>
+                    <a href="https://github.com/shibu822" target="_blank" rel="noopener noreferrer" class="contact-val">github.com/shibu822</a>
+                </div>
+                <div class="contact-line">
+                    <span class="contact-key">LinkedIn:</span>
+                    <a href="https://www.linkedin.com/in/shibu-shalom-b07525325/" target="_blank" rel="noopener noreferrer" class="contact-val">linkedin.com/in/shibu-shalom-b07525325</a>
                 </div>
             </div>
-        </section>
 
-        <!-- Experience & Certifications Timeline -->
-        <section id="experience" class="section experience-section">
-            <div class="container">
-                <div class="section-header text-center fade-in-up">
-                    <span class="section-tag">&lt;journey /&gt;</span>
-                    <h2 class="section-title">Experience & Certifications</h2>
-                    <p class="section-subtitle">Real-world industry exposure, structured training, and specialized credentials.</p>
-                </div>
+            <!-- Functional Contact Form (Wired to Web3Forms) -->
+            <form id="contactForm" class="contact-form-clean" action="https://api.web3forms.com/submit" method="POST" novalidate>
+                <input type="hidden" name="access_key" value="bc6429e2-0083-4e66-be5f-4ebeecc9a4aa">
+                <input type="hidden" name="from_name" value="Shibu Portfolio Contact">
 
-                <div class="timeline-container">
-                    <!-- Item 1: Internship -->
-                    <div class="timeline-item fade-in-up">
-                        <div class="timeline-dot">
-                            <i class="fas fa-briefcase"></i>
-                        </div>
-                        <div class="timeline-content spotlight-card">
-                            <div class="timeline-header">
-                                <div>
-                                    <span class="timeline-badge work-badge">Industry Internship</span>
-                                    <h3 class="timeline-role">.NET Full Stack Developer Intern</h3>
-                                    <h4 class="timeline-company"><i class="fas fa-building"></i> Faith Infotech, Technopark</h4>
-                                </div>
-                                <span class="timeline-period"><i class="far fa-calendar-alt"></i> Sep 2025 – Mar 2026</span>
-                            </div>
-                            <div class="timeline-body">
-                                <ul class="timeline-bullets">
-                                    <li>Architected and developed modular enterprise web applications using <strong>ASP.NET Core MVC</strong> and <strong>SQL Server</strong>.</li>
-                                    <li>Implemented scalable CRUD operations adopting the <strong>Controller-Service-Repository pattern</strong>.</li>
-                                    <li>Designed normalized relational database schemas, foreign key relationships, and stored procedures.</li>
-                                    <li>Collaborated with peers using Git and participated in code reviews and test validation.</li>
-                                </ul>
-                                <div class="timeline-tags">
-                                    <span>ASP.NET Core</span>
-                                    <span>C#</span>
-                                    <span>SQL Server</span>
-                                    <span>MVC</span>
-                                    <span>Entity Framework</span>
-                                </div>
-                            </div>
-                        </div>
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="senderName">Name</label>
+                        <input type="text" id="senderName" name="name" required autocomplete="name">
+                        <span class="form-error" id="nameError"></span>
                     </div>
 
-                    <!-- Item 2: Training -->
-                    <div class="timeline-item fade-in-up" style="transition-delay: 150ms;">
-                        <div class="timeline-dot">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="timeline-content spotlight-card">
-                            <div class="timeline-header">
-                                <div>
-                                    <span class="timeline-badge training-badge">Professional Training</span>
-                                    <h3 class="timeline-role">Frontend Developer Training</h3>
-                                    <h4 class="timeline-company"><i class="fas fa-building"></i> Pantech E-Learning, Chennai</h4>
-                                </div>
-                                <span class="timeline-period"><i class="far fa-calendar-alt"></i> Jun 2023</span>
-                            </div>
-                            <div class="timeline-body">
-                                <ul class="timeline-bullets">
-                                    <li>Built production-quality responsive web pages leveraging semantic HTML5, CSS3, and JavaScript.</li>
-                                    <li>Mastered UI structuring, CSS Flexbox, Grid systems, and cross-browser responsiveness.</li>
-                                    <li>Engineered real-world frontend web layouts with focus on load performance and accessibility.</li>
-                                </ul>
-                                <div class="timeline-tags">
-                                    <span>HTML5</span>
-                                    <span>CSS3</span>
-                                    <span>JavaScript</span>
-                                    <span>UI Structuring</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Item 3: Certification -->
-                    <div class="timeline-item fade-in-up" style="transition-delay: 300ms;">
-                        <div class="timeline-dot">
-                            <i class="fas fa-certificate"></i>
-                        </div>
-                        <div class="timeline-content spotlight-card">
-                            <div class="timeline-header">
-                                <div>
-                                    <span class="timeline-badge cert-badge">Certified Skill</span>
-                                    <h3 class="timeline-role">Figma – UI/UX Design Certification</h3>
-                                    <h4 class="timeline-company"><i class="fas fa-award"></i> Udemy Professional Course</h4>
-                                </div>
-                                <span class="timeline-period"><i class="far fa-check-circle"></i> Credential Earned</span>
-                            </div>
-                            <div class="timeline-body">
-                                <ul class="timeline-bullets">
-                                    <li>Specialized in Mobile and Web UI/UX design workflows, wireframing, and interactive prototyping.</li>
-                                    <li>Mastered design systems, typography hierarchy, component auto-layout, and color contrast theory.</li>
-                                    <li>Translating Figma design tokens into clean HTML, CSS, and component styles.</li>
-                                </ul>
-                                <div class="timeline-tags">
-                                    <span>Figma</span>
-                                    <span>UI/UX Design</span>
-                                    <span>Wireframing</span>
-                                    <span>Design Systems</span>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="form-field">
+                        <label for="senderEmail">Email</label>
+                        <input type="email" id="senderEmail" name="email" required autocomplete="email">
+                        <span class="form-error" id="emailError"></span>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Projects Showcase Section -->
-        <section id="projects" class="section projects-section">
-            <div class="container">
-                <div class="section-header text-center fade-in-up">
-                    <span class="section-tag">&lt;portfolio /&gt;</span>
-                    <h2 class="section-title">Featured Projects</h2>
-                    <p class="section-subtitle">Real-world applications engineered for performance, maintainability, and great user experience.</p>
+                <div class="form-field">
+                    <label for="senderSubject">Subject</label>
+                    <input type="text" id="senderSubject" name="subject" required>
+                    <span class="form-error" id="subjectError"></span>
                 </div>
 
-                <!-- Projects Category Filter -->
-                <div class="projects-filter-bar fade-in-up">
-                    <button class="project-filter-btn active" data-filter="all">All Projects</button>
-                    <button class="project-filter-btn" data-filter="fullstack">Full-Stack (.NET)</button>
-                    <button class="project-filter-btn" data-filter="frontend">Frontend & Web</button>
+                <div class="form-field">
+                    <label for="senderMessage">Message</label>
+                    <textarea id="senderMessage" name="message" rows="4" required></textarea>
+                    <span class="form-error" id="messageError"></span>
                 </div>
 
-                <div class="projects-grid">
-                    <!-- Project 1: CMS -->
-                    <div class="project-card spotlight-card fade-in-up" data-category="fullstack" id="project-cms">
-                        <div class="project-media-container">
-                            <img src="assets/cms_mockup.png" alt="Clinic Management System Mockup" class="project-image" loading="lazy">
-                            <div class="project-media-badge"><i class="fas fa-star"></i> Featured Enterprise</div>
-                            <div class="project-media-overlay">
-                                <button class="overlay-action-btn quick-view-btn" data-project="cms" title="Quick View Details">
-                                    <i class="fas fa-expand"></i> Quick View
-                                </button>
-                                <a href="https://github.com/Ramalingamsj/ClinicManagementSystem" target="_blank" rel="noopener noreferrer" class="overlay-action-btn" title="View Source on GitHub">
-                                    <i class="fab fa-github"></i> Source
-                                </a>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <div class="project-category-tag">Healthcare • Full-Stack System</div>
-                            <h3 class="project-title">Clinic Management System (CMS)</h3>
-                            <p class="project-desc">
-                                An end-to-end multi-role healthcare application managing patients, doctors, appointment scheduling, and automated billing records.
-                            </p>
-                            <div class="project-tech-pills">
-                                <span>ASP.NET Web API</span>
-                                <span>C#</span>
-                                <span>EF Core</span>
-                                <span>SQL Server</span>
-                                <span>Angular</span>
-                                <span>Bootstrap</span>
-                            </div>
-                            <div class="project-footer">
-                                <button class="btn btn-sm btn-glass quick-view-btn" data-project="cms">
-                                    <i class="fas fa-info-circle"></i> Details
-                                </button>
-                                <a href="https://github.com/Ramalingamsj/ClinicManagementSystem" target="_blank" rel="noopener noreferrer" class="project-link">
-                                    <span>GitHub Code</span>
-                                    <i class="fas fa-arrow-up-right-from-square"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 2: Tourism -->
-                    <div class="project-card spotlight-card fade-in-up" data-category="frontend" id="project-tourism" style="transition-delay: 150ms;">
-                        <div class="project-media-container">
-                            <img src="assets/tourism_mockup.png" alt="Visit Kanyakumari Tourism Website Mockup" class="project-image" loading="lazy">
-                            <div class="project-media-badge"><i class="fas fa-globe"></i> Live Web App</div>
-                            <div class="project-media-overlay">
-                                <button class="overlay-action-btn quick-view-btn" data-project="tourism" title="Quick View Details">
-                                    <i class="fas fa-expand"></i> Quick View
-                                </button>
-                                <a href="https://github.com/shibu822/kanyakumari" target="_blank" rel="noopener noreferrer" class="overlay-action-btn" title="View Source on GitHub">
-                                    <i class="fab fa-github"></i> Source
-                                </a>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <div class="project-category-tag">Tourism • Travel & Hospitality</div>
-                            <h3 class="project-title">Visit Kanyakumari Tourism Portal</h3>
-                            <p class="project-desc">
-                                A high-performance, visually immersive tourism guide website showcasing attractions, cultural heritage, travel routes, and local galleries.
-                            </p>
-                            <div class="project-tech-pills">
-                                <span>HTML5</span>
-                                <span>CSS3</span>
-                                <span>JavaScript</span>
-                                <span>Bootstrap 5</span>
-                                <span>Vercel Deploy</span>
-                            </div>
-                            <div class="project-footer">
-                                <button class="btn btn-sm btn-glass quick-view-btn" data-project="tourism">
-                                    <i class="fas fa-info-circle"></i> Details
-                                </button>
-                                <a href="https://github.com/shibu822/kanyakumari" target="_blank" rel="noopener noreferrer" class="project-link">
-                                    <span>GitHub Code</span>
-                                    <i class="fas fa-arrow-up-right-from-square"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 3: React Portfolio (Vite) -->
-                    <div class="project-card spotlight-card fade-in-up" data-category="frontend" id="project-portfolio" style="transition-delay: 300ms;">
-                        <div class="project-media-container">
-                            <div class="portfolio-preview-graphic">
-                                <div class="code-window-header">
-                                    <span class="dot red"></span>
-                                    <span class="dot yellow"></span>
-                                    <span class="dot green"></span>
-                                    <span class="code-window-title">App.jsx</span>
-                                </div>
-                                <div class="code-window-body">
-                                    <code>
-                                        <span class="c-keyword">import</span> React <span class="c-keyword">from</span> <span class="c-string">'react'</span>;<br>
-                                        <span class="c-keyword">const</span> Developer = () =&gt; {<br>
-                                        &nbsp;&nbsp;<span class="c-keyword">return</span> &lt;<span class="c-component">Portfolio</span> interactive={true} /&gt;;<br>
-                                        };
-                                    </code>
-                                </div>
-                            </div>
-                            <div class="project-media-badge"><i class="fas fa-bolt"></i> Modern React 19</div>
-                            <div class="project-media-overlay">
-                                <button class="overlay-action-btn quick-view-btn" data-project="portfolio" title="Quick View Details">
-                                    <i class="fas fa-expand"></i> Quick View
-                                </button>
-                                <a href="https://shibu-portfolio-lake.vercel.app" target="_blank" rel="noopener noreferrer" class="overlay-action-btn" title="Open Live Site">
-                                    <i class="fas fa-external-link-alt"></i> Live
-                                </a>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <div class="project-category-tag">React Ecosystem • Interactive UI</div>
-                            <h3 class="project-title">Interactive Portfolio System</h3>
-                            <p class="project-desc">
-                                Modern portfolio architecture featuring custom particle networks, 3D tilt cards, command palette search, and dark/light glassmorphic UI.
-                            </p>
-                            <div class="project-tech-pills">
-                                <span>React 19</span>
-                                <span>Vite</span>
-                                <span>Glassmorphism</span>
-                                <span>Canvas API</span>
-                                <span>Modern CSS</span>
-                            </div>
-                            <div class="project-footer">
-                                <button class="btn btn-sm btn-glass quick-view-btn" data-project="portfolio">
-                                    <i class="fas fa-info-circle"></i> Details
-                                </button>
-                                <a href="https://shibu-portfolio-lake.vercel.app" target="_blank" rel="noopener noreferrer" class="project-link">
-                                    <span>Live Preview</span>
-                                    <i class="fas fa-arrow-up-right-from-square"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Interactive Contact Section -->
-        <section id="contact" class="section contact-section">
-            <div class="container">
-                <div class="section-header text-center fade-in-up">
-                    <span class="section-tag">&lt;connect /&gt;</span>
-                    <h2 class="section-title">Get In Touch</h2>
-                    <p class="section-subtitle">Interested in collaborating, hiring, or discussing a new opportunity? My inbox is always open.</p>
-                </div>
-
-                <div class="contact-grid">
-                    <!-- Contact Cards -->
-                    <div class="contact-info-col fade-in-up">
-                        <div class="contact-card spotlight-card copyable-card" data-copy="shibushalommp@gmail.com" title="Click to copy email">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-details">
-                                <span class="contact-label">Email Address</span>
-                                <h4 class="contact-value">shibushalommp@gmail.com</h4>
-                            </div>
-                            <button class="copy-badge" aria-label="Copy Email">
-                                <i class="fas fa-copy"></i>
-                                <span>Copy</span>
-                            </button>
-                        </div>
-
-                        <div class="contact-card spotlight-card copyable-card" data-copy="+918220078235" title="Click to copy phone">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div class="contact-details">
-                                <span class="contact-label">Direct Phone</span>
-                                <h4 class="contact-value">+91 8220078235</h4>
-                            </div>
-                            <button class="copy-badge" aria-label="Copy Phone">
-                                <i class="fas fa-copy"></i>
-                                <span>Copy</span>
-                            </button>
-                        </div>
-
-                        <div class="contact-card spotlight-card">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-details">
-                                <span class="contact-label">Location</span>
-                                <h4 class="contact-value">Nagercoil, Tamil Nadu, India</h4>
-                            </div>
-                        </div>
-
-                        <div class="social-connect-box spotlight-card">
-                            <h4>Connect On Networks</h4>
-                            <div class="social-pills">
-                                <a href="https://github.com/shibu822" target="_blank" rel="noopener noreferrer" class="social-pill">
-                                    <i class="fab fa-github"></i>
-                                    <span>GitHub</span>
-                                </a>
-                                <a href="https://www.linkedin.com/in/shibu-shalom-b07525325/" target="_blank" rel="noopener noreferrer" class="social-pill">
-                                    <i class="fab fa-linkedin-in"></i>
-                                    <span>LinkedIn</span>
-                                </a>
-                                <a href="mailto:shibushalommp@gmail.com" class="social-pill">
-                                    <i class="fas fa-paper-plane"></i>
-                                    <span>Direct Email</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Interactive Form -->
-                    <div class="contact-form-col fade-in-up" style="transition-delay: 150ms;">
-                        <form id="contactForm" class="contact-form spotlight-card" action="https://api.web3forms.com/submit" method="POST" novalidate>
-                            <input type="hidden" name="access_key" value="bc6429e2-0083-4e66-be5f-4ebeecc9a4aa">
-                            <input type="hidden" name="from_name" value="Shibu Portfolio Notification">
-                            <h3 class="form-title"><i class="fas fa-paper-plane"></i> Send a Message</h3>
-                            
-                            <div class="form-group">
-                                <label for="senderName">Your Name <span class="required">*</span></label>
-                                <div class="input-wrapper">
-                                    <i class="fas fa-user input-icon"></i>
-                                    <input type="text" id="senderName" name="name" placeholder="John Doe" required>
-                                </div>
-                                <span class="field-error" id="nameError"></span>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="senderEmail">Email Address <span class="required">*</span></label>
-                                <div class="input-wrapper">
-                                    <i class="fas fa-envelope input-icon"></i>
-                                    <input type="email" id="senderEmail" name="email" placeholder="john@example.com" required>
-                                </div>
-                                <span class="field-error" id="emailError"></span>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="senderSubject">Subject <span class="required">*</span></label>
-                                <div class="input-wrapper">
-                                    <i class="fas fa-tag input-icon"></i>
-                                    <input type="text" id="senderSubject" name="subject" placeholder="Project Inquiry / Job Opportunity" required>
-                                </div>
-                                <span class="field-error" id="subjectError"></span>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="senderMessage">Message <span class="required">*</span></label>
-                                <div class="input-wrapper">
-                                    <textarea id="senderMessage" name="message" rows="5" placeholder="Hi Shibu, I would like to discuss..." required></textarea>
-                                </div>
-                                <span class="field-error" id="messageError"></span>
-                            </div>
-
-                            <button type="submit" class="btn btn-primary btn-block" id="formSubmitBtn">
-                                <span>Send Message</span>
-                                <i class="fas fa-paper-plane"></i>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+                <button type="submit" class="btn btn-primary" id="formSubmitBtn">Send message</button>
+                <div id="formStatus" class="form-status" aria-live="polite"></div>
+            </form>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-container">
-            <div class="footer-brand">
-                <a href="#hero" class="brand-logo">
-                    <span class="logo-badge">&lt;/&gt;</span>
-                    <span class="logo-text">Shibu<span class="accent-text">.dev</span></span>
-                </a>
-                <p class="footer-motto">Engineered with precision, built for scale.</p>
-            </div>
-
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <span>&copy; 2026 Shibu Shalom B.P</span>
             <div class="footer-links">
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#experience">Experience</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
+                <a href="mailto:shibushalommp@gmail.com">Email</a>
+                <a href="https://github.com/shibu822" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/in/shibu-shalom-b07525325/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
-
-            <div class="footer-social">
-                <a href="mailto:shibushalommp@gmail.com" aria-label="Email Shibu"><i class="fas fa-envelope"></i></a>
-                <a href="https://github.com/shibu822" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/shibu-shalom-b07525325/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Shibu Shalom B.P. Crafted with modern web technologies.</p>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button class="back-to-top-btn" id="backToTopBtn" aria-label="Back to Top" title="Back to Top">
-        <svg class="progress-ring" width="48" height="48">
-            <circle class="progress-ring-circle" stroke="currentColor" stroke-width="3" fill="transparent" r="21" cx="24" cy="24" />
-        </svg>
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <!-- ==================== INTERACTIVE MODALS ==================== -->
-
-    <!-- 1. Command Palette Modal (Cmd + K) -->
-    <div class="cmd-modal-backdrop" id="cmdModal" aria-hidden="true">
-        <div class="cmd-palette-box" role="dialog" aria-modal="true" aria-labelledby="cmdPaletteTitle">
-            <div class="cmd-palette-header">
-                <i class="fas fa-terminal cmd-icon"></i>
-                <input type="text" id="cmdSearchInput" placeholder="Type a command or jump to section..." autocomplete="off">
-                <span class="cmd-badge-esc"><kbd>ESC</kbd></span>
-            </div>
-            <div class="cmd-results" id="cmdResultsList">
-                <div class="cmd-category-label">Navigation</div>
-                <div class="cmd-item" data-action="nav" data-target="#hero">
-                    <i class="fas fa-home"></i><span>Home / Hero</span><span class="cmd-shortcut">Jump</span>
-                </div>
-                <div class="cmd-item" data-action="nav" data-target="#about">
-                    <i class="fas fa-user"></i><span>About Me</span><span class="cmd-shortcut">Jump</span>
-                </div>
-                <div class="cmd-item" data-action="nav" data-target="#skills">
-                    <i class="fas fa-code"></i><span>Skills Matrix</span><span class="cmd-shortcut">Jump</span>
-                </div>
-                <div class="cmd-item" data-action="nav" data-target="#services">
-                    <i class="fas fa-cogs"></i><span>Services & Architecture</span><span class="cmd-shortcut">Jump</span>
-                </div>
-                <div class="cmd-item" data-action="nav" data-target="#experience">
-                    <i class="fas fa-briefcase"></i><span>Experience & Certifications</span><span class="cmd-shortcut">Jump</span>
-                </div>
-                <div class="cmd-item" data-action="nav" data-target="#projects">
-                    <i class="fas fa-laptop-code"></i><span>Projects Showcase</span><span class="cmd-shortcut">Jump</span>
-                </div>
-                <div class="cmd-item" data-action="nav" data-target="#contact">
-                    <i class="fas fa-envelope"></i><span>Contact Information</span><span class="cmd-shortcut">Jump</span>
-                </div>
-
-                <div class="cmd-category-label">Quick Actions</div>
-                <div class="cmd-item" data-action="theme">
-                    <i class="fas fa-palette"></i><span>Toggle Dark / Light Mode</span><span class="cmd-shortcut">Action</span>
-                </div>
-                <div class="cmd-item" data-action="copy-email">
-                    <i class="fas fa-copy"></i><span>Copy Email Address</span><span class="cmd-shortcut">Copy</span>
-                </div>
-                <div class="cmd-item" data-action="resume">
-                    <i class="fas fa-file-alt"></i><span>View Professional Resume</span><span class="cmd-shortcut">Open</span>
-                </div>
-                <div class="cmd-item" data-action="github">
-                    <i class="fab fa-github"></i><span>Open GitHub Profile</span><span class="cmd-shortcut">Link</span>
-                </div>
-                <div class="cmd-item" data-action="linkedin">
-                    <i class="fab fa-linkedin"></i><span>Open LinkedIn Profile</span><span class="cmd-shortcut">Link</span>
-                </div>
-            </div>
-            <div class="cmd-palette-footer">
-                <span><kbd>↑</kbd> <kbd>↓</kbd> Navigate</span>
-                <span><kbd>↵</kbd> Select</span>
-                <span><kbd>esc</kbd> Close</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- 2. Project Quick View Modal -->
-    <div class="project-modal-backdrop" id="projectModal" aria-hidden="true">
-        <div class="project-modal-card" role="dialog" aria-modal="true">
-            <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close Modal">&times;</button>
-            <div class="modal-body" id="projectModalContent">
-                <!-- Dynamically populated by script.js -->
-            </div>
-        </div>
-    </div>
-
-    <!-- 3. Resume Preview Modal -->
-    <div class="resume-modal-backdrop" id="resumeModal" aria-hidden="true">
-        <div class="resume-modal-card" role="dialog" aria-modal="true">
-            <button class="modal-close-btn" id="resumeCloseBtn" aria-label="Close Modal">&times;</button>
-            <div class="resume-modal-header">
-                <h2><i class="fas fa-file-invoice"></i> Shibu Shalom B.P — Resume Summary</h2>
-                <div class="resume-actions">
-                    <a href="mailto:shibushalommp@gmail.com?subject=Job%20Opportunity%20Inquiry" class="btn btn-sm btn-primary">
-                        <i class="fas fa-envelope"></i> Request Official PDF
-                    </a>
-                </div>
-            </div>
-            <div class="resume-modal-body">
-                <div class="resume-section">
-                    <h3>Summary</h3>
-                    <p>
-                        Full-Stack Developer with hands-on enterprise internship experience in the .NET ecosystem, ASP.NET Core Web API, C#, Entity Framework Core, SQL Server, and frontend frameworks including Angular & React. Proven ability to design normalized relational schemas and architect RESTful APIs with clean layered design.
-                    </p>
-                </div>
-
-                <div class="resume-section">
-                    <h3>Core Technical Competencies</h3>
-                    <div class="resume-skills-grid">
-                        <div><strong>Backend:</strong> ASP.NET Core, C#, Web API, Entity Framework Core, ADO.NET, LINQ</div>
-                        <div><strong>Frontend:</strong> Angular, React, TypeScript, JavaScript (ES6+), HTML5, CSS3, Bootstrap 5</div>
-                        <div><strong>Databases:</strong> Microsoft SQL Server, MySQL, Schema Normalization, Stored Procedures</div>
-                        <div><strong>Tools & Practices:</strong> Git, GitHub, Visual Studio, VS Code, Postman, MVC Architecture</div>
-                    </div>
-                </div>
-
-                <div class="resume-section">
-                    <h3>Industry Experience</h3>
-                    <div class="resume-exp-item">
-                        <h4>.NET Full Stack Developer Intern — Faith Infotech, Technopark</h4>
-                        <span class="resume-date">Sep 2025 – Mar 2026</span>
-                        <ul>
-                            <li>Developed scalable web modules using ASP.NET Core MVC and SQL Server.</li>
-                            <li>Implemented CRUD operations using repository and service layers.</li>
-                            <li>Designed database tables with referential integrity and optimized queries.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="resume-section">
-                    <h3>Education & Training</h3>
-                    <div class="resume-exp-item">
-                        <h4>Frontend Developer Training — Pantech E-Learning</h4>
-                        <span class="resume-date">Jun 2023</span>
-                    </div>
-                    <div class="resume-exp-item">
-                        <h4>Figma UI/UX Design — Udemy Certification</h4>
-                        <span class="resume-date">Credential Earned</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Toast Notification Container -->
-    <div class="toast-container" id="toastContainer" aria-live="polite"></div>
-
-    <!-- Scripts -->
-    <script src="particles.js"></script>
     <script src="script.js"></script>
 </body>
 
